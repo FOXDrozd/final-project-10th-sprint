@@ -8,7 +8,7 @@
 #       dir4
 
 mkdir -p task/dir1 task/dir2 task/dir3/dir4 
-cd task
+
 
 # изменяем текущую директорию на task
 # cd task
@@ -24,17 +24,20 @@ touch ./dir2/empty
 echo '#!/bin/bash
 echo "$1, привет!"' > ./dir2/hello.sh
 
+
 # устанавливаем для task/dir2/hello.sh права rwxrw-r--
 
 chmod 764 ./dir2/hello.sh
 
 # сохраняем список файлов task/dir2 в task/dir2/list.txt
+
 ls ./dir2 > list.txt
 cat list.txt
 
 # копируем содержимое каталога task/dir2 в каталог task/dir3/dir4
 
 cp -r ./dir2/* ./dir3/dir4
+
 
 # записываем в task/dir1/summary.txt список файлов с расширением *.txt
 # находящихся в task, включая поддиректории
